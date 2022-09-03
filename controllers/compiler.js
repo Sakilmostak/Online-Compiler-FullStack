@@ -1,52 +1,57 @@
-var compiler = require('compilex');
-var options = {stats: true};
+const compiler = require('compilex');
+const options = {stats: true};
 compiler.init(options);
 
 module.exports.compileCode = async function(req, res){
     try{
 
-        var envData = {OS : "linux", cmd : "gcc"};
-        var inputData = req.body.input;
-        var inputCheck= req.body.check;
+        compiler.flushSync();
+        var inputData = req.body.inputData;
+        var inputCheck= req.body.inputCheck;
         var code= req.body.code;
         var language = req.body.language;
 
-        if(language==='C' || language==="C++"){
-            if(inputCheck){
-                compiler.compileCPPWithInput(
-                    envData,
-                    code,
-                    inputData,
-                    function(data){
-                        if(data.error){
-                            res.send(data.error);
-                        }
-                        else{
-                            res.send(data.output);
-                        }
-                    }
-                )
-            }
-            else{
-                compiler.compileCPP(
-                    envData,
-                    code,
-                    function(data){
-                        if(data.error){
-                            res.send(data.error);
-                        }
-                        else{
-                            res.send(data.output);
-                        }
-                    }
-                )
-            }
-        }
+        // if(language==='C'){
+        //     var envData = {OS : "linux", cmd : "gcc"};
+        //     if(inputCheck==='true'){
+        //         compiler.compileCPPWithInput(
+        //             envData,
+        //             code,
+        //             inputData,
+        //             function(data){
+        //                 if(data.error){
+        //                     res.send(data.error);
+        //                 }
+        //                 else{
+        //                     console.log(data.output);
+        //                     res.send(data.output);
+        //                 }
+        //             }
+        //         )
+        //     }
+        //     else{
+        //         compiler.compileCPP(
+        //             envData,
+        //             code,
+        //             function(data){
+        //                 if(data.error){
+        //                     res.send(data.error);
+        //                 }
+        //                 else{
+        //                     console.log(data.output);
+                            
+        //                     res.send(data.output);
+        //                 }
+        //             }
+        //         )
+        //     }
+        // }
+        
         if(language==="Python"){
-            if(inputCheck){
-                var curEnv = {OS: "linux"};
+                var envData = {OS : "linux"};
+            if(inputCheck==="true"){
                 compiler.compilePythonWithInput(
-                    curEnv,
+                    envData,
                     code,
                     inputData,
                     function(data){
@@ -54,21 +59,23 @@ module.exports.compileCode = async function(req, res){
                             res.send(data.error);
                         }
                         else{
+                            console.log(data.output);
                             res.send(data.output);
                         }
                     }
                 )
             }
             else{
-                var curEnv = {OS: "linux"};
+                var envData = {OS: "linux"};
                 compiler.compilePython(
-                    curEnv,
+                    envData,
                     code,
                     function(data){
                         if(data.error){
                             res.send(data.error);
                         }
                         else{
+                            console.log(data.output);
                             res.send(data.output);
                         }
                     }
