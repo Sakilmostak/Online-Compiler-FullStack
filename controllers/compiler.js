@@ -19,7 +19,8 @@ module.exports.compileCode = async function(req, res){
                         else{
                             return res.render('home',{
                                 code: code,
-                                output: data.output
+                                output: data.output,
+                                input: inputData
                             })
                         }
                     }
@@ -36,7 +37,8 @@ module.exports.compileCode = async function(req, res){
                         else{
                             return res.render('home',{
                                 code: code,
-                                output: data.output
+                                output: data.output,
+                                input: inputData
                             })
                         }
                     }
@@ -58,7 +60,8 @@ module.exports.compileCode = async function(req, res){
                         else{
                             return res.render('home',{
                                 code: code,
-                                output: data.output
+                                output: data.output,
+                                input: inputData
                             })
                         }
                     }
@@ -75,7 +78,8 @@ module.exports.compileCode = async function(req, res){
                         else{
                             return res.render('home',{
                                 code: code,
-                                output: data.output
+                                output: data.output,
+                                input: inputData
                             })
                         }
                     }
@@ -97,7 +101,8 @@ module.exports.compileCode = async function(req, res){
                         else{
                             return res.render('home',{
                                 code: code,
-                                output: data.output
+                                output: data.output,
+                                input: inputData
                             })
                         }
                     }
@@ -111,7 +116,8 @@ module.exports.compileCode = async function(req, res){
                         else{
                             return res.render('home',{
                                 code: code,
-                                output: data.output
+                                output: data.output,
+                                input: inputData
                             })
                         }
                     }

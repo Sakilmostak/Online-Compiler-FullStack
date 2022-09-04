@@ -8,7 +8,7 @@
     <meta name="viewport" content=
         "width=device-width, 
         initial-scale=1.0" />
-    <link rel="shortcut icon" href="download.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/download.webp" type="image/x-icon">
 </head>
 
 <body>
@@ -41,7 +41,10 @@
                 <div id="coding">
                     <textarea name="code" class="input"><% if(locals.code!==null) { %> <%= locals.code %> <%}%></textarea>
                     <div class="io">
-                        <textarea name="inputData" class="output"><% if(locals.output!==null) { %> <%= locals.output %> <%}%></textarea>
+                      <div class="output">
+                        <textarea name="inputData" class="value"><% if(locals.input!==null) { %> <%= locals.input %> <%}%></textarea>
+                        <p id="ans">Output: <br><% if(locals.output!==null) { %> <%= locals.output %> <%}%></p>
+                      </div>
                         <div id="btns">
                             <h3 id="inh"><u>Input: </u></h3>
                             <input type="radio" name="inputCheck" value="true" id="btn4" class="" checked="checked" />
