@@ -34,7 +34,7 @@ A lightning-fast ⚡ online code compiler built with Express.js during a 24-hour
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/online-compiler.git
+   git clone https://github.com/Sakilmostak/Online-Compiler-FullStack.git
    cd online-compiler
 
 2. **Install dependencies**
